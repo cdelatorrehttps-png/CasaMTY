@@ -1,0 +1,4 @@
+﻿id_tipo,tipo,es_vivienda
+1,casa,True
+2,departamento,True
+3,terreno,False

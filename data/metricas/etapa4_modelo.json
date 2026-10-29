@@ -1,0 +1,81 @@
+{
+  "resultados": {
+    "venta": {
+      "filas_entrenamiento": 479418,
+      "filas_prueba": 119854,
+      "segundos_entrenamiento": 2.5,
+      "a_ojo_promedio_municipio": {
+        "mae_mxn": 1005514.0,
+        "mape_pct": 34.23,
+        "mdape_pct": 25.83,
+        "pct_dentro_20": 39.9
+      },
+      "mediana_m2_municipio": {
+        "mae_mxn": 559621.0,
+        "mape_pct": 16.51,
+        "mdape_pct": 12.84,
+        "pct_dentro_20": 70.6
+      },
+      "modelo": {
+        "mae_mxn": 371239.0,
+        "mape_pct": 11.23,
+        "mdape_pct": 9.19,
+        "pct_dentro_20": 85.7
+      },
+      "reduccion_error_vs_a_ojo_pct": 67.2,
+      "reduccion_error_vs_mediana_m2_pct": 32.0
+    },
+    "renta": {
+      "filas_entrenamiento": 304484,
+      "filas_prueba": 76120,
+      "segundos_entrenamiento": 1.4,
+      "a_ojo_promedio_municipio": {
+        "mae_mxn": 4671.0,
+        "mape_pct": 35.53,
+        "mdape_pct": 26.65,
+        "pct_dentro_20": 38.8
+      },
+      "mediana_m2_municipio": {
+        "mae_mxn": 2801.0,
+        "mape_pct": 18.59,
+        "mdape_pct": 14.47,
+        "pct_dentro_20": 65.0
+      },
+      "modelo": {
+        "mae_mxn": 2058.0,
+        "mape_pct": 13.88,
+        "mdape_pct": 11.37,
+        "pct_dentro_20": 76.5
+      },
+      "reduccion_error_vs_a_ojo_pct": 60.9,
+      "reduccion_error_vs_mediana_m2_pct": 25.3
+    }
+  },
+  "importancia_permutacion": {
+    "venta": {
+      "id_municipio": 0.0223,
+      "id_colonia": 0.8524,
+      "id_tipo": 0.0068,
+      "m2": 0.5991,
+      "recamaras": 0.083,
+      "banos": 0.0024,
+      "estacionamientos": 0.0001
+    },
+    "renta": {
+      "id_municipio": 0.0285,
+      "id_colonia": 0.8582,
+      "id_tipo": 0.0057,
+      "m2": 0.6259,
+      "recamaras": 0.0721,
+      "banos": 0.0018,
+      "estacionamientos": 0.0001
+    }
+  },
+  "zonas_con_suficiente_muestra": 440,
+  "zonas_totales": 440,
+  "zonas_que_cumplen_meta_mape": 440,
+  "pct_zonas_suficientes_que_cumplen_meta": 100.0,
+  "segundos_entrenamiento_total": 3.9,
+  "segundos_etapa": 11.9,
+  "nota": "Datos SIMULADOS: el error refleja el ruido de la simulación, no el mercado real."
+}

@@ -1,0 +1,362 @@
+﻿municipio,operacion,tipo,bin,n,step
+García,venta,departamento,3,9669,5000
+General Escobedo,renta,departamento,3,13422,25
+San Pedro Garza García,venta,casa,12,3238,5000
+Juárez,renta,casa,2,8442,25
+San Pedro Garza García,venta,casa,11,2644,5000
+Apodaca,renta,departamento,2,6537,25
+San Nicolás de los Garza,renta,departamento,4,7284,25
+San Nicolás de los Garza,venta,departamento,4,9311,5000
+Apodaca,renta,departamento,4,4440,25
+San Nicolás de los Garza,renta,departamento,7,136,25
+San Pedro Garza García,renta,departamento,18,632,25
+San Pedro Garza García,renta,casa,14,1262,25
+Guadalupe,renta,departamento,2,2527,25
+San Pedro Garza García,venta,departamento,16,1771,5000
+Santa Catarina,venta,departamento,1,71,5000
+San Pedro Garza García,venta,departamento,6,72,5000
+Guadalupe,renta,casa,6,107,25
+San Pedro Garza García,renta,casa,20,68,25
+Santa Catarina,venta,departamento,6,208,5000
+San Nicolás de los Garza,renta,departamento,8,19,25
+García,renta,departamento,5,22,25
+Monterrey,renta,casa,12,11,25
+Monterrey,renta,departamento,13,17,25
+Santiago,renta,departamento,10,5,25
+Santa Catarina,venta,casa,7,2,5000
+San Pedro Garza García,venta,departamento,11,1557,5000
+Monterrey,venta,departamento,5,11667,5000
+San Nicolás de los Garza,venta,casa,3,16600,5000
+Juárez,renta,departamento,2,8890,25
+Santa Catarina,renta,casa,2,2285,25
+Santiago,renta,casa,3,498,25
+Monterrey,renta,casa,9,661,25
+San Pedro Garza García,renta,casa,17,344,25
+Monterrey,venta,casa,10,272,5000
+San Nicolás de los Garza,venta,departamento,1,84,5000
+San Pedro Garza García,venta,departamento,5,42,5000
+San Nicolás de los Garza,renta,departamento,9,2,25
+Apodaca,renta,departamento,7,4,25
+Monterrey,venta,departamento,13,5,5000
+García,venta,casa,2,22795,5000
+Guadalupe,renta,casa,4,4487,25
+Monterrey,renta,departamento,7,7876,25
+Guadalupe,venta,casa,3,17221,5000
+Monterrey,venta,departamento,4,3946,5000
+Juárez,venta,casa,2,18575,5000
+San Nicolás de los Garza,renta,departamento,3,7312,25
+Apodaca,venta,casa,2,15114,5000
+San Pedro Garza García,venta,casa,10,2503,5000
+San Pedro Garza García,renta,departamento,17,900,25
+Monterrey,renta,departamento,9,1910,25
+Apodaca,renta,casa,3,9085,25
+San Nicolás de los Garza,venta,departamento,3,8635,5000
+García,renta,casa,3,3087,25
+Santiago,renta,casa,5,1091,25
+Santiago,venta,departamento,6,1236,5000
+San Nicolás de los Garza,renta,casa,1,167,25
+San Nicolás de los Garza,venta,casa,1,254,5000
+Monterrey,venta,departamento,2,168,5000
+Santa Catarina,venta,casa,6,54,5000
+San Pedro Garza García,venta,departamento,7,169,5000
+Juárez,renta,departamento,4,216,25
+General Escobedo,venta,casa,5,44,5000
+Apodaca,venta,departamento,6,43,5000
+Santiago,venta,casa,2,93,5000
+General Escobedo,renta,casa,5,45,25
+San Pedro Garza García,renta,casa,23,1,25
+Guadalupe,renta,departamento,8,2,25
+Apodaca,renta,departamento,5,652,25
+García,venta,departamento,2,10699,5000
+San Nicolás de los Garza,venta,casa,4,11464,5000
+Santa Catarina,venta,casa,4,9297,5000
+San Pedro Garza García,venta,casa,13,3418,5000
+San Pedro Garza García,venta,departamento,14,2106,5000
+Apodaca,venta,departamento,5,793,5000
+General Escobedo,venta,casa,1,874,5000
+San Pedro Garza García,renta,casa,13,1585,25
+Monterrey,venta,casa,9,1433,5000
+Apodaca,renta,departamento,1,400,25
+Monterrey,venta,casa,2,610,5000
+García,venta,departamento,1,519,5000
+San Nicolás de los Garza,venta,departamento,7,124,5000
+San Nicolás de los Garza,renta,casa,7,19,25
+Santiago,renta,casa,8,34,25
+San Nicolás de los Garza,renta,casa,8,1,25
+Juárez,renta,casa,5,1,25
+San Nicolás de los Garza,venta,departamento,8,6,5000
+Santa Catarina,venta,casa,3,14963,5000
+General Escobedo,venta,casa,2,18153,5000
+San Pedro Garza García,venta,casa,14,3217,5000
+Guadalupe,renta,departamento,4,6897,25
+San Pedro Garza García,renta,casa,15,886,25
+Monterrey,venta,casa,7,11467,5000
+Guadalupe,renta,departamento,5,2412,25
+San Nicolás de los Garza,venta,casa,5,3627,5000
+General Escobedo,renta,departamento,2,7622,25
+San Nicolás de los Garza,renta,departamento,2,1826,25
+García,venta,departamento,4,590,5000
+Monterrey,renta,casa,10,189,25
+San Nicolás de los Garza,renta,casa,6,301,25
+San Pedro Garza García,venta,departamento,20,294,5000
+San Nicolás de los Garza,renta,departamento,1,131,25
+General Escobedo,venta,casa,6,2,5000
+General Escobedo,renta,casa,3,9927,25
+Apodaca,venta,departamento,3,16270,5000
+Monterrey,renta,casa,4,7735,25
+Juárez,venta,departamento,2,10958,5000
+Monterrey,venta,departamento,7,10643,5000
+Guadalupe,renta,departamento,3,7939,25
+Juárez,renta,departamento,1,1344,25
+General Escobedo,renta,departamento,4,3674,25
+San Pedro Garza García,venta,departamento,15,2041,5000
+Monterrey,venta,casa,8,4730,5000
+Juárez,venta,departamento,3,4645,5000
+Guadalupe,venta,departamento,5,3346,5000
+Monterrey,venta,departamento,11,195,5000
+San Pedro Garza García,venta,departamento,8,499,5000
+San Nicolás de los Garza,venta,departamento,2,960,5000
+General Escobedo,renta,casa,4,1228,25
+Juárez,venta,casa,1,3062,5000
+San Pedro Garza García,venta,departamento,9,1037,5000
+Monterrey,renta,casa,2,510,25
+Santiago,renta,departamento,6,900,25
+Santa Catarina,renta,casa,1,159,25
+Santiago,renta,casa,6,466,25
+Santiago,venta,departamento,3,146,5000
+Juárez,renta,casa,4,42,25
+Santiago,venta,departamento,2,32,5000
+San Pedro Garza García,venta,departamento,24,25,5000
+Santa Catarina,venta,departamento,8,1,5000
+San Pedro Garza García,venta,departamento,4,4,5000
+Guadalupe,venta,departamento,8,4,5000
+General Escobedo,renta,casa,0,1,25
+General Escobedo,venta,casa,4,2432,5000
+San Pedro Garza García,renta,departamento,11,1505,25
+Apodaca,venta,casa,3,22026,5000
+San Pedro Garza García,venta,casa,15,2459,5000
+Apodaca,venta,departamento,2,5115,5000
+Monterrey,venta,departamento,8,6001,5000
+San Pedro Garza García,venta,departamento,22,72,5000
+Santiago,renta,departamento,5,1413,25
+Monterrey,renta,casa,6,9036,25
+Santiago,venta,casa,6,1189,5000
+General Escobedo,venta,departamento,2,6082,5000
+San Pedro Garza García,venta,casa,9,2277,5000
+San Pedro Garza García,venta,casa,17,1037,5000
+San Pedro Garza García,venta,departamento,19,526,5000
+Santiago,venta,departamento,7,539,5000
+Santiago,renta,departamento,3,267,25
+García,renta,departamento,4,646,25
+Juárez,venta,departamento,1,858,5000
+Juárez,venta,casa,0,16,5000
+San Pedro Garza García,renta,casa,6,196,25
+San Pedro Garza García,renta,casa,16,687,25
+Monterrey,renta,departamento,12,53,25
+Monterrey,renta,casa,11,28,25
+Santa Catarina,venta,departamento,7,10,5000
+San Pedro Garza García,renta,casa,21,30,25
+Monterrey,renta,casa,13,1,25
+Santiago,renta,departamento,11,2,25
+García,renta,casa,5,3,25
+Juárez,venta,departamento,0,2,5000
+Monterrey,renta,departamento,6,11311,25
+Santiago,renta,departamento,7,353,25
+Santa Catarina,venta,departamento,4,8913,5000
+General Escobedo,venta,departamento,4,5010,5000
+Monterrey,venta,departamento,9,2578,5000
+Santa Catarina,venta,casa,2,2765,5000
+Santiago,venta,departamento,4,1014,5000
+Apodaca,renta,casa,1,565,25
+García,venta,casa,4,151,5000
+General Escobedo,venta,departamento,5,226,5000
+Guadalupe,venta,departamento,1,124,5000
+San Pedro Garza García,venta,casa,6,202,5000
+San Pedro Garza García,renta,departamento,22,79,25
+Guadalupe,venta,casa,6,148,5000
+Monterrey,renta,departamento,11,212,25
+Juárez,venta,departamento,4,181,5000
+San Pedro Garza García,renta,casa,22,10,25
+San Pedro Garza García,venta,casa,23,8,5000
+San Pedro Garza García,renta,departamento,23,33,25
+García,venta,casa,0,2,5000
+García,renta,casa,0,6,25
+Guadalupe,renta,casa,7,6,25
+Guadalupe,venta,departamento,4,9505,5000
+San Pedro Garza García,renta,casa,11,1507,25
+Monterrey,venta,departamento,3,1522,5000
+Monterrey,renta,casa,5,11689,25
+Monterrey,venta,casa,3,3623,5000
+Santiago,venta,casa,5,2506,5000
+Santiago,renta,casa,4,1342,25
+Santa Catarina,renta,casa,4,3780,25
+General Escobedo,renta,casa,1,780,25
+San Pedro Garza García,venta,departamento,17,1340,5000
+San Nicolás de los Garza,venta,casa,6,509,5000
+García,renta,casa,4,127,25
+Santiago,renta,casa,7,121,25
+Santiago,venta,casa,7,301,5000
+Apodaca,renta,casa,5,182,25
+San Nicolás de los Garza,venta,casa,7,31,5000
+Monterrey,renta,casa,1,7,25
+Monterrey,venta,casa,13,3,5000
+Monterrey,venta,departamento,6,15052,5000
+Monterrey,venta,departamento,10,868,5000
+García,renta,departamento,3,6451,25
+Monterrey,renta,departamento,5,10697,25
+Santa Catarina,renta,departamento,4,6122,25
+Santa Catarina,venta,departamento,5,2510,5000
+García,venta,casa,1,1597,5000
+Juárez,renta,casa,3,1353,25
+Santa Catarina,venta,departamento,3,7031,5000
+Monterrey,renta,casa,3,2518,25
+San Pedro Garza García,renta,departamento,7,292,25
+San Pedro Garza García,venta,departamento,13,1864,5000
+San Pedro Garza García,renta,departamento,12,1692,25
+Apodaca,venta,departamento,4,6065,5000
+Guadalupe,renta,departamento,6,441,25
+San Pedro Garza García,renta,casa,5,68,25
+San Pedro Garza García,renta,casa,9,1197,25
+Guadalupe,renta,casa,5,919,25
+García,renta,departamento,1,821,25
+Santiago,renta,departamento,8,106,25
+San Pedro Garza García,renta,casa,4,25,25
+San Pedro Garza García,renta,departamento,5,58,25
+Santiago,renta,departamento,9,24,25
+Guadalupe,venta,departamento,7,36,5000
+San Pedro Garza García,venta,casa,22,13,5000
+San Pedro Garza García,renta,departamento,24,44,25
+García,venta,departamento,5,7,5000
+San Pedro Garza García,renta,departamento,4,7,25
+Juárez,venta,departamento,5,3,5000
+Santiago,venta,casa,1,4,5000
+Juárez,renta,departamento,5,4,25
+General Escobedo,venta,departamento,3,19414,5000
+García,renta,departamento,2,9762,25
+Monterrey,venta,casa,6,20512,5000
+Juárez,renta,casa,1,2491,25
+San Pedro Garza García,renta,departamento,16,1248,25
+San Pedro Garza García,venta,casa,16,1623,5000
+Apodaca,renta,casa,2,9242,25
+Guadalupe,renta,casa,2,3797,25
+San Nicolás de los Garza,renta,casa,2,3050,25
+San Pedro Garza García,renta,departamento,10,1385,25
+Monterrey,renta,departamento,8,4341,25
+Apodaca,renta,casa,4,1931,25
+San Pedro Garza García,renta,casa,10,1397,25
+Santa Catarina,renta,departamento,3,6745,25
+San Pedro Garza García,renta,casa,18,202,25
+San Pedro Garza García,venta,departamento,18,897,5000
+Santiago,venta,departamento,5,1858,5000
+Apodaca,venta,departamento,1,346,5000
+San Nicolás de los Garza,renta,casa,5,1489,25
+San Pedro Garza García,venta,casa,18,460,5000
+Monterrey,venta,casa,11,41,5000
+Monterrey,venta,departamento,12,44,5000
+Juárez,renta,casa,0,21,25
+San Pedro Garza García,venta,casa,21,32,5000
+General Escobedo,venta,departamento,6,8,5000
+San Pedro Garza García,venta,departamento,23,33,5000
+Apodaca,renta,casa,6,10,25
+General Escobedo,renta,departamento,6,8,25
+Monterrey,venta,casa,4,11196,5000
+Guadalupe,venta,casa,4,10576,5000
+Guadalupe,venta,casa,5,1970,5000
+General Escobedo,venta,casa,3,24442,5000
+San Nicolás de los Garza,renta,casa,4,5047,25
+Santa Catarina,venta,casa,5,1209,5000
+Santiago,venta,casa,4,2500,5000
+San Pedro Garza García,venta,casa,8,1616,5000
+Santiago,venta,casa,3,549,5000
+Monterrey,renta,departamento,2,256,25
+San Pedro Garza García,renta,casa,8,989,25
+Santiago,renta,casa,2,69,25
+San Pedro Garza García,venta,casa,7,633,5000
+San Pedro Garza García,venta,departamento,21,146,5000
+Santa Catarina,renta,departamento,6,264,25
+San Pedro Garza García,venta,casa,4,32,5000
+García,renta,departamento,0,2,25
+Santiago,renta,casa,9,2,25
+García,venta,casa,3,7729,5000
+San Nicolás de los Garza,renta,casa,3,8011,25
+Santiago,renta,departamento,4,1200,25
+San Pedro Garza García,venta,departamento,10,1411,5000
+Monterrey,renta,casa,7,4752,25
+García,renta,casa,2,11119,25
+San Nicolás de los Garza,renta,departamento,5,3165,25
+Santa Catarina,renta,departamento,2,1324,25
+Monterrey,renta,casa,8,2065,25
+Guadalupe,renta,departamento,1,145,25
+San Nicolás de los Garza,venta,casa,2,3595,5000
+Santa Catarina,renta,casa,5,569,25
+Guadalupe,venta,departamento,2,1878,5000
+Apodaca,venta,casa,1,764,5000
+Santa Catarina,venta,casa,1,194,5000
+General Escobedo,venta,departamento,1,390,5000
+San Pedro Garza García,renta,departamento,19,373,25
+Apodaca,venta,casa,5,325,5000
+San Pedro Garza García,venta,casa,19,229,5000
+San Pedro Garza García,renta,departamento,6,97,25
+Santiago,renta,departamento,2,43,25
+Santiago,venta,departamento,9,24,5000
+Juárez,renta,departamento,3,3259,25
+San Nicolás de los Garza,venta,departamento,5,4452,5000
+Guadalupe,venta,departamento,3,9104,5000
+San Pedro Garza García,renta,departamento,13,1797,25
+Monterrey,renta,departamento,3,1716,25
+Apodaca,venta,casa,4,4397,5000
+Juárez,venta,casa,3,3184,5000
+General Escobedo,renta,departamento,5,304,25
+General Escobedo,renta,departamento,1,465,25
+San Pedro Garza García,renta,departamento,20,211,25
+San Pedro Garza García,venta,casa,5,105,5000
+Apodaca,renta,departamento,6,68,25
+Juárez,venta,casa,4,49,5000
+Juárez,renta,departamento,0,8,25
+Santa Catarina,renta,departamento,7,22,25
+Santiago,renta,casa,1,5,25
+Monterrey,venta,casa,12,4,5000
+Guadalupe,venta,casa,2,5485,5000
+Guadalupe,venta,departamento,6,503,5000
+Santa Catarina,renta,casa,3,7276,25
+San Pedro Garza García,renta,casa,7,560,25
+San Nicolás de los Garza,renta,departamento,6,905,25
+San Pedro Garza García,renta,departamento,9,1055,25
+San Pedro Garza García,renta,departamento,15,1506,25
+Guadalupe,venta,casa,1,346,5000
+Santa Catarina,venta,departamento,2,801,5000
+San Pedro Garza García,renta,departamento,8,699,25
+Santiago,venta,departamento,8,147,5000
+San Pedro Garza García,renta,departamento,21,148,25
+Santa Catarina,renta,departamento,1,97,25
+Santiago,venta,casa,8,44,5000
+General Escobedo,renta,casa,2,11006,25
+San Nicolás de los Garza,venta,departamento,6,1126,5000
+Apodaca,renta,departamento,3,11938,25
+Monterrey,venta,casa,5,24353,5000
+San Pedro Garza García,renta,departamento,14,1788,25
+Guadalupe,renta,casa,3,8168,25
+Monterrey,renta,departamento,4,5266,25
+García,renta,casa,1,1567,25
+San Pedro Garza García,renta,casa,12,1666,25
+Santa Catarina,renta,departamento,5,1832,25
+San Pedro Garza García,venta,departamento,12,1691,5000
+Monterrey,renta,departamento,10,729,25
+Guadalupe,renta,casa,1,229,25
+Santa Catarina,renta,casa,6,48,25
+Guadalupe,renta,departamento,7,40,25
+San Pedro Garza García,venta,casa,20,113,5000
+San Pedro Garza García,renta,casa,19,116,25
+Monterrey,venta,casa,1,5,5000
+Santa Catarina,renta,casa,7,2,25
+Apodaca,venta,casa,6,6,5000
+Monterrey,venta,departamento,14,1,5000
+Apodaca,renta,casa,7,1,25
+Santiago,venta,casa,9,1,5000
+San Nicolás de los Garza,venta,casa,8,1,5000
+San Pedro Garza García,renta,casa,24,2,25
+Monterrey,renta,departamento,14,2,25
+Santa Catarina,renta,departamento,8,1,25
+Guadalupe,venta,casa,7,2,5000
+San Pedro Garza García,venta,casa,24,4,5000
+Santiago,venta,departamento,10,2,5000

@@ -1,0 +1,14 @@
+{
+  "filas_hecho_anuncio": 1500763,
+  "segundos_consultas": {
+    "precio_m2_promedio_por_municipio_casas_venta": 1.547,
+    "inventario_por_operacion_y_tipo": 1.052,
+    "tasa_duplicados_por_fuente": 0.663,
+    "top10_colonias_mas_caras_casas_venta": 0.0,
+    "anuncios_sobre_precio_estimado_san_pedro": 28.153
+  },
+  "segundos_promedio_por_consulta": 6.283,
+  "costo_por_consulta_usd": 0.0,
+  "tamano_sqlite_mb": 157.5,
+  "segundos_etapa": 107.0
+}

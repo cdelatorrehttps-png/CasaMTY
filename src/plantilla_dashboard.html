@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CasaMTY - Dashboard de precios de listado del AMM</title>
+<style>
+:root{
+  --bg:#f3f6f4; --card:#ffffff; --ink:#15231e; --muted:#5b6b64; --line:#dfe6e2;
+  --venta:#0f8a5f; --renta:#2b6cb0; --accent:#0f8a5f; --warn:#b7791f; --bad:#c0392b; --ok:#0f8a5f;
+  --bar:#0f8a5f; --bar2:#9bb8ab; --chip:#e7f1ec;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0f1714; --card:#17221d; --ink:#e8f0ec; --muted:#9db0a7; --line:#27362f;
+    --venta:#3ec790; --renta:#6aa8f0; --accent:#3ec790; --bar:#3ec790; --bar2:#41584d; --chip:#1e2d26; --warn:#e0a94a; --bad:#ef7a6c; --ok:#3ec790;}
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{background:linear-gradient(120deg,#0b5d41,#0f8a5f 60%,#27b383);color:#fff;padding:22px 20px 14px}
+header .wrap,main,.banner .wrap{max-width:1180px;margin:0 auto}
+header h1{margin:0;font-size:26px;letter-spacing:.2px}
+header p{margin:4px 0 12px;opacity:.9}
+nav{display:flex;gap:8px;flex-wrap:wrap}
+nav a{color:#fff;text-decoration:none;background:rgba(255,255,255,.16);padding:6px 12px;border-radius:999px;font-size:13px}
+nav a:hover{background:rgba(255,255,255,.3)}
+.banner{background:#fff4d6;color:#5c4400;border-bottom:1px solid #ecd48a;padding:8px 20px;font-size:13px}
+@media (prefers-color-scheme: dark){.banner{background:#3a3014;color:#f3dfa0;border-color:#5a4a1c}}
+main{padding:18px 20px 40px}
+h2{font-size:18px;margin:28px 0 10px}
+.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;position:sticky;top:0;z-index:5}
+label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+select,input{width:100%;padding:7px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:12px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.kpi .v{font-size:24px;font-weight:700;margin-top:2px}
+.kpi .t{font-size:12px;color:var(--muted)}
+.kpi .s{font-size:12px;color:var(--muted);margin-top:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:12px}
+.card{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}
+.card h3{margin:0 0 2px;font-size:15px}
+.card .sub{font-size:12px;color:var(--muted);margin-bottom:8px}
+.wide{grid-column:1/-1}
+svg{display:block;width:100%;height:auto}
+svg text{fill:var(--ink);font-size:12px}
+svg .m{fill:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:right}
+th:first-child,td:first-child{text-align:left}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+.pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;background:var(--chip)}
+.ok{color:var(--ok);font-weight:600}.bad{color:var(--bad);font-weight:600}.warn{color:var(--warn);font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:720px){.two{grid-template-columns:1fr}.grid{grid-template-columns:1fr}}
+@media (max-width:520px){.grid{grid-template-columns:minmax(0,1fr)}}
+.val{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:12px}
+.result{background:var(--chip);border-radius:10px;padding:12px 14px}
+.result .big{font-size:26px;font-weight:700}
+footer{color:var(--muted);font-size:12px;margin-top:30px}
+.legend span{display:inline-flex;align-items:center;gap:5px;margin-right:12px;font-size:12px;color:var(--muted)}
+.legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>CasaMTY &middot; Precios de listado de vivienda en el AMM</h1>
+  <p>Proyecto integrador de tecnolog&iacute;as de Big Data &middot; Fase 3 (MVP) &middot; Pipeline batch en Python + Spark local</p>
+  <nav><a href="#mercado">Mercado</a><a href="#calidad">Calidad y metas</a><a href="#modelo">Modelo y valuador</a></nav>
+</div></header>
+<div class="banner"><div class="wrap"><b>Datos SIMULADOS con fines acad&eacute;micos.</b> Muestra el <b>precio aproximado de listado</b> (no precio de cierre). No es un aval&uacute;o ni un valor comercial certificado.</div></div>
+
+<main>
+<section id="mercado">
+  <div class="filters" id="filtros">
+    <div><label>Municipio</label><select id="fMuni"></select></div>
+    <div><label>Colonia</label><select id="fCol"></select></div>
+    <div><label>Operaci&oacute;n</label><select id="fOp"><option value="0">Venta</option><option value="1">Renta</option></select></div>
+    <div><label>Tipo de inmueble</label><select id="fTipo"><option value="">Casas y deptos</option><option value="0">Casa</option><option value="1">Departamento</option></select></div>
+    <div><label>Rango de m&sup2;</label><select id="fM2"></select></div>
+    <div><label>Rec&aacute;maras</label><select id="fRec"><option value="">Todas</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4 o m&aacute;s</option></select></div>
+  </div>
+  <div class="kpis" id="kpis"></div>
+
+  <h2>Mercado por zona</h2>
+  <div class="grid">
+    <div class="card"><h3>Precio mediano por m&sup2; por municipio</h3><div class="sub" id="subA"></div><div id="chA"></div></div>
+    <div class="card"><h3>Colonias m&aacute;s caras y m&aacute;s baratas</h3><div class="sub" id="subB"></div><div class="sub"><b>Más caras</b></div><div id="chB1"></div><div class="sub"><b>Más baratas</b></div><div id="chB2"></div></div>
+    <div class="card"><h3>Distribuci&oacute;n del precio por m&sup2;</h3><div class="sub" id="subC"></div><div id="chC"></div></div>
+    <div class="card"><h3>Tendencia semanal (3 corridas)</h3><div class="sub" id="subD"></div><div id="chD"></div></div>
+    <div class="card wide"><h3>Estructura de la oferta</h3><div class="sub">Con los filtros de zona, rango de m&sup2; y rec&aacute;maras (sin filtrar operaci&oacute;n ni tipo).</div><div class="two"><div id="chE1"></div><div id="chE2"></div></div></div>
+  </div>
+</section>
+
+<section id="calidad">
+  <h2>Calidad de los datos (Veracidad) e indicadores de la Fase 3</h2>
+  <div class="grid">
+    <div class="card"><h3>Calidad por portal</h3><div class="sub">% sobre todos los registros crudos de cada portal.</div><div id="tCal"></div></div>
+    <div class="card"><h3>Embudo de limpieza</h3><div class="sub">De registros crudos a registros usables para precio.</div><div id="chF"></div></div>
+    <div class="card wide"><h3>Cumplimiento de metas (definidas en Fases 1 y 2)</h3><div class="sub">Se calculan con la corrida real del pipeline.</div><div id="tMetas"></div></div>
+  </div>
+</section>
+
+<section id="modelo">
+  <h2>Modelo de estimaci&oacute;n y valuador</h2>
+  <div class="grid">
+    <div class="card"><h3>Error del estimado (MAPE) vs m&eacute;todos tradicionales</h3><div class="sub" id="subM"></div><div id="chM"></div></div>
+    <div class="card"><h3>Precio real vs estimado (muestra de prueba)</h3><div class="sub" id="subS"></div><div id="chS"></div></div>
+    <div class="card wide"><h3>Valuador de orientaci&oacute;n</h3>
+      <div class="sub">Estimaci&oacute;n con la mediana de anuncios parecidos (misma colonia, tipo, tama&ntilde;o y rec&aacute;maras). Si hay pocos anuncios, sube a nivel municipio.</div>
+      <div class="val">
+        <div><label>Municipio</label><select id="vMuni"></select></div>
+        <div><label>Colonia</label><select id="vCol"></select></div>
+        <div><label>Operaci&oacute;n</label><select id="vOp"><option value="0">Venta</option><option value="1">Renta (mensual)</option></select></div>
+        <div><label>Tipo</label><select id="vTipo"><option value="0">Casa</option><option value="1">Departamento</option></select></div>
+        <div><label>m&sup2; construcci&oacute;n</label><input id="vM2" type="number" min="25" max="2000" value="120"></div>
+        <div><label>Rec&aacute;maras</label><select id="vRec"><option>1</option><option>2</option><option selected>3</option><option>4</option></select></div>
+        <div><label>Precio publicado (opcional)</label><input id="vPrecio" type="number" min="0" placeholder="MXN"></div>
+      </div>
+      <div class="result" id="vOut"></div>
+    </div>
+  </div>
+</section>
+<footer id="foot"></footer>
+</main>
+
+<script>
+/*__DATA__*/
+const IDX = {m:0,c:1,o:2,t:3,b:4,r:5,n:6,p:7,q1:8,q3:9,pr:10};
+const MUNI = DATA.municipios, COL = DATA.colonias;        // COL[i] = [nombre, idxMunicipio]
+const OPN = ['Venta','Renta'], TIPN = ['Casa','Departamento'];
+const fmt = new Intl.NumberFormat('es-MX',{maximumFractionDigits:0});
+const money = x => x==null||isNaN(x) ? '—' : '$'+fmt.format(Math.round(x));
+const pct = (x,d=1) => x==null||isNaN(x) ? '—' : x.toFixed(d)+'%';
+const $ = id => document.getElementById(id);
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const state = {m:'', c:'', o:0, t:'', b:'', r:''};
+
+/* ---------- utilidades de agregación ---------- */
+function wmed(rows, k){            // mediana ponderada (por n) de las medianas de grupo
+  if(!rows.length) return null;
+  const a = rows.map(r=>[r[k], r[IDX.n]]).sort((x,y)=>x[0]-y[0]);
+  const tot = a.reduce((s,x)=>s+x[1],0); let acc=0;
+  for(const [v,n] of a){ acc+=n; if(acc>=tot/2) return v; }
+  return a[a.length-1][0];
+}
+const sumN = rows => rows.reduce((s,r)=>s+r[IDX.n],0);
+function filtrar(skip=[]){
+  return DATA.cubo.filter(r=>
+    (skip.includes('m')||state.m===''||r[IDX.m]==state.m) &&
+    (skip.includes('c')||state.c===''||r[IDX.c]==state.c) &&
+    (skip.includes('o')||r[IDX.o]==state.o) &&
+    (skip.includes('t')||state.t===''||r[IDX.t]==state.t) &&
+    (skip.includes('b')||state.b===''||r[IDX.b]==state.b) &&
+    (skip.includes('r')||state.r===''||r[IDX.r]==state.r));
+}
+function agrupar(rows, keyFn){ const g=new Map(); for(const r of rows){const k=keyFn(r); if(!g.has(k)) g.set(k,[]); g.get(k).push(r);} return g; }
+
+/* ---------- gráficos SVG sencillos ---------- */
+function barsH(el, items, {color='--bar', fmtV=money, w=460, hl=null}={}){
+  if(!items.length){ el.innerHTML='<div class="sub">Sin datos para estos filtros.</div>'; return; }
+  const rowH=26, lab=165, pad=6, H=items.length*rowH+pad*2, max=Math.max(...items.map(i=>i.v))||1;
+  let s=`<svg viewBox="0 0 ${w} ${H}" role="img">`;
+  items.forEach((it,i)=>{
+    const y=pad+i*rowH, bw=(w-lab-70)*it.v/max;
+    const col = hl!==null && it.key===hl ? css('--accent') : css(color);
+    s+=`<text x="0" y="${y+15}">${it.label.length>26?it.label.slice(0,25)+'…':it.label}</text>`+
+       `<rect x="${lab}" y="${y+3}" width="${Math.max(bw,1)}" height="${rowH-8}" rx="3" fill="${col}"><title>${it.label}: ${fmtV(it.v)}${it.n!=null?' ('+fmt.format(it.n)+' anuncios)':''}</title></rect>`+
+       `<text x="${lab+bw+5}" y="${y+15}" class="m">${fmtV(it.v)}</text>`;
+  });
+  el.innerHTML=s+'</svg>';
+}
+function hist(el, bins, step, op){
+  const w=460,h=200,L=36,B=26,T=8,R=6; const max=Math.max(...bins,1);
+  const bw=(w-L-R)/bins.length; let s=`<svg viewBox="0 0 ${w} ${h}">`;
+  bins.forEach((v,i)=>{const bh=(h-B-T)*v/max; s+=`<rect x="${L+i*bw+1}" y="${h-B-bh}" width="${bw-2}" height="${bh}" fill="${css(op==0?'--venta':'--renta')}" rx="2"><title>${money(i*step)} – ${i==bins.length-1?'más':money((i+1)*step)} por m²: ${fmt.format(v)} anuncios</title></rect>`;});
+  for(let i=0;i<bins.length;i+=4) s+=`<text class="m" x="${L+i*bw}" y="${h-8}">${money(i*step)}</text>`;
+  s+=`<text class="m" x="0" y="${T+8}">${fmt.format(max)}</text><text class="m" x="0" y="${h-B}">0</text>`;
+  el.innerHTML=s+'</svg>';
+}
+function line(el, pts){
+  if(pts.length<2){ el.innerHTML='<div class="sub">Sin datos.</div>'; return; }
+  const w=460,h=200,L=64,B=28,T=22,R=44; const vs=pts.map(p=>p.v); let mn=Math.min(...vs), mx=Math.max(...vs); const pd=(mx-mn)*.4||mx*.02; mn-=pd; mx+=pd;
+  const X=i=>L+i*(w-L-R)/(pts.length-1), Y=v=>T+(h-T-B)*(1-(v-mn)/(mx-mn));
+  let s=`<svg viewBox="0 0 ${w} ${h}"><polyline fill="none" stroke="${css('--accent')}" stroke-width="2.5" points="${pts.map((p,i)=>X(i)+','+Y(p.v)).join(' ')}"/>`;
+  pts.forEach((p,i)=>{ s+=`<circle cx="${X(i)}" cy="${Y(p.v)}" r="4" fill="${css('--accent')}"><title>${p.l}: ${money(p.v)} (${fmt.format(p.n)} anuncios)</title></circle><text x="${X(i)}" y="${h-8}" text-anchor="middle" class="m">${p.l.slice(5)}</text><text x="${X(i)}" y="${Y(p.v)-9}" text-anchor="middle">${money(p.v)}</text>`; });
+  el.innerHTML=s+'</svg>';
+}
+function stack(el, parts, colors){
+  const tot=parts.reduce((s,p)=>s+p.v,0)||1, w=460; let x=0, s=`<svg viewBox="0 0 ${w} 62">`;
+  parts.forEach((p,i)=>{ const bw=w*p.v/tot; s+=`<rect x="${x}" y="8" width="${bw}" height="26" fill="${colors[i]}"><title>${p.l}: ${fmt.format(p.v)} (${(100*p.v/tot).toFixed(1)}%)</title></rect>`; x+=bw; });
+  x=0; parts.forEach((p,i)=>{ s+=`<text x="${i==0?0:w}" y="54" text-anchor="${i==0?'start':'end'}">${p.l}: ${(100*p.v/tot).toFixed(1)}% (${fmt.format(p.v)})</text>`; });
+  el.innerHTML=s+'</svg>';
+}
+function scatter(el, pts, op){
+  const w=460,h=300,L=50,B=34,T=8,R=10; const xs=pts.map(p=>Math.log10(p.x)), mn=Math.min(...xs,...pts.map(p=>Math.log10(p.y))), mx=Math.max(...xs,...pts.map(p=>Math.log10(p.y)));
+  const X=v=>L+(Math.log10(v)-mn)/(mx-mn)*(w-L-R), Y=v=>T+(h-T-B)*(1-(Math.log10(v)-mn)/(mx-mn));
+  let s=`<svg viewBox="0 0 ${w} ${h}"><line x1="${X(Math.pow(10,mn))}" y1="${Y(Math.pow(10,mn))}" x2="${X(Math.pow(10,mx))}" y2="${Y(Math.pow(10,mx))}" stroke="${css('--muted')}" stroke-dasharray="4 4"/>`;
+  pts.forEach(p=>{ s+=`<circle cx="${X(p.x)}" cy="${Y(p.y)}" r="2" fill="${css(op==0?'--venta':'--renta')}" opacity=".45"/>`; });
+  s+=`<text class="m" x="${L}" y="${h-6}">Precio publicado (escala log) →</text><text class="m" x="2" y="14">Estimado ↑</text>`;
+  for(let e=Math.ceil(mn); e<=Math.floor(mx); e++) s+=`<text class="m" x="${X(Math.pow(10,e))-12}" y="${h-20}">${e>=6?(Math.pow(10,e-6))+' M':e>=3?(Math.pow(10,e-3))+' mil':Math.pow(10,e)}</text>`;
+  el.innerHTML=s+'</svg>';
+}
+
+/* ---------- render principal ---------- */
+function render(){
+  const rows=filtrar();
+  const ppm=wmed(rows,IDX.p), n=sumN(rows);
+  const rowsNoOp=filtrar(['o','t']); const nv=sumN(rowsNoOp.filter(r=>r[IDX.o]==0)), nr=sumN(rowsNoOp.filter(r=>r[IDX.o]==1));
+  const porCol=agrupar(filtrar(['c']), r=>r[IDX.c]); let cob=0; porCol.forEach(v=>{ if(sumN(v)>=DATA.umbral) cob++; });
+  const mod=DATA.modelo[OPN[state.o].toLowerCase()];
+  const zona=state.c!==''?COL[state.c][0]:(state.m!==''?MUNI[state.m]:'todo el AMM');
+  $('kpis').innerHTML=[
+    ['Precio mediano por m²', money(ppm), `${OPN[state.o]} · ${zona}`],
+    ['Precio mediano del anuncio', money(wmed(rows,IDX.pr)), state.o==1?'renta mensual':'precio de listado'],
+    ['Inventario (anuncios usables)', fmt.format(n), 'sin duplicados ni atípicos'],
+    ['Mezcla venta / renta', nv+nr? (100*nv/(nv+nr)).toFixed(0)+'% / '+(100*nr/(nv+nr)).toFixed(0)+'%':'—', 'oferta en la zona filtrada'],
+    ['Cobertura geográfica', cob+' colonias', `con ≥ ${DATA.umbral} anuncios (${DATA.municipios_con_datos} municipios)`],
+    ['MAPE del estimado', pct(mod.modelo.mape_pct), `modelo de ${OPN[state.o].toLowerCase()} (meta < ${DATA.metas.mape}%)`],
+  ].map(k=>`<div class="kpi"><div class="t">${k[0]}</div><div class="v">${k[1]}</div><div class="s">${k[2]}</div></div>`).join('');
+
+  // A: por municipio (ignora filtro de municipio/colonia para poder comparar)
+  const gm=agrupar(filtrar(['m','c']), r=>r[IDX.m]);
+  const A=[...gm].map(([k,v])=>({key:+k,label:MUNI[k],v:wmed(v,IDX.p),n:sumN(v)})).filter(i=>i.n>=DATA.umbral).sort((a,b)=>b.v-a.v);
+  $('subA').textContent=`${OPN[state.o]}, ${state.o==0?'MXN por m²':'MXN por m² al mes'}. Resalta el municipio filtrado.`;
+  barsH($('chA'),A,{fmtV:money,hl:state.m===''?null:+state.m,color:state.o==0?'--venta':'--renta'});
+
+  // B: colonias
+  const gc=agrupar(filtrar(['c']), r=>r[IDX.c]);
+  const C=[...gc].map(([k,v])=>({key:+k,label:COL[k][0]+(state.m===''?' · '+MUNI[COL[k][1]].split(' ')[0]:''),v:wmed(v,IDX.p),n:sumN(v)})).filter(i=>i.n>=DATA.umbral).sort((a,b)=>b.v-a.v);
+  $('subB').textContent=`Colonias con ≥ ${DATA.umbral} anuncios en los filtros actuales (${C.length} colonias).`;
+  barsH($('chB1'),C.slice(0,8),{color:'--venta'}); barsH($('chB2'),C.slice(-8).reverse(),{color:'--bar2'});
+
+  // C: histograma
+  const hs=DATA.hist.filter(h=>h[1]==state.o && (state.m===''||h[0]==state.m) && (state.t===''||h[2]==state.t));
+  const bins=new Array(25).fill(0); hs.forEach(h=>bins[h[3]]+=h[4]);
+  const step=state.o==0?5000:25; $('subC').textContent=`Cada barra = ${money(step)} por m². Última barra: ${money(24*step)} o más.`;
+  hist($('chC'),bins,step,state.o);
+
+  // D: tendencia
+  const ts=DATA.tend.filter(t=>t[2]==state.o && (state.m===''||t[1]==state.m) && (state.t===''||t[3]==state.t));
+  const gf=agrupar(ts,t=>t[0]); const pts=[...gf].sort().map(([f,v])=>({l:f,v:wmed(v.map(x=>[0,0,0,0,0,0,x[4],x[5]]),IDX.p),n:v.reduce((s,x)=>s+x[4],0)}));
+  const ch = pts.length>1 ? (pts[pts.length-1].v/pts[0].v-1)*100 : null;
+  $('subD').textContent=`Mediana por m² en cada corrida. Cambio primera→última: ${ch==null?'—':(ch>=0?'+':'')+ch.toFixed(1)+'%'} (la simulación incluye +0.4% semanal).`;
+  line($('chD'),pts);
+
+  // E: estructura
+  const base=filtrar(['o','t']);
+  stack($('chE1'),[{l:'Venta',v:nv},{l:'Renta',v:nr}],[css('--venta'),css('--renta')]);
+  const nc=sumN(base.filter(r=>r[IDX.t]==0)), nd=sumN(base.filter(r=>r[IDX.t]==1));
+  stack($('chE2'),[{l:'Casas',v:nc},{l:'Departamentos',v:nd}],[css('--warn'),css('--bar2')]);
+  renderModelo();
+}
+
+function renderModelo(){
+  const op=OPN[state.o].toLowerCase(), m=DATA.modelo[op];
+  $('subM').textContent=`${OPN[state.o]}: menor es mejor. Reducción vs. "a ojo": ${m.reduccion_error_vs_a_ojo_pct}%.`;
+  barsH($('chM'),[{label:'A ojo (promedio municipio)',v:m.a_ojo_promedio_municipio.mape_pct},{label:'Mediana por m² del municipio',v:m.mediana_m2_municipio.mape_pct},{label:'Modelo CasaMTY',v:m.modelo.mape_pct}],{fmtV:v=>v.toFixed(1)+'%',color:'--bar2',hl:null,w:460});
+  const pts=DATA.scatter.filter(p=>p[0]==state.o).map(p=>({x:p[1],y:p[2]}));
+  $('subS').textContent=`${pts.length} anuncios de prueba (no usados para entrenar). Diagonal = estimado perfecto.`;
+  scatter($('chS'),pts,state.o);
+}
+
+function renderCalidad(){
+  const q=DATA.calidad;
+  $('tCal').innerHTML='<table><tr><th>Portal</th><th>Registros</th><th>% completo</th><th>% m² válido</th><th>% colonia válida</th><th>% duplicado</th></tr>'+
+    q.por_fuente.map(f=>`<tr><td>${f.fuente}</td><td>${fmt.format(f.n)}</td><td>${f.pct_completo}%</td><td>${f.pct_m2_valido}%</td><td>${f.pct_colonia_valida}%</td><td>${f.pct_duplicado}%</td></tr>`).join('')+
+    `<tr><td><b>Total</b></td><td><b>${fmt.format(q.registros_crudos)}</b></td><td><b>${q.pct_completo}%</b></td><td><b>${q.pct_m2_valido}%</b></td><td><b>${q.pct_colonia_valida}%</b></td><td><b>${q.tasa_duplicados_pct}%</b></td></tr></table>`;
+  const e=DATA.embudo; barsH($('chF'),e.map(x=>({label:x[0],v:x[1]})),{fmtV:v=>fmt.format(v),w:460,color:'--bar'});
+  const M=DATA.metas_tabla;
+  $('tMetas').innerHTML='<table><tr><th>Indicador</th><th>Meta</th><th>Resultado</th><th>Estado</th></tr>'+M.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td class="${r[3]?'ok':'bad'}">${r[3]?'✔ Cumple':'✘ No cumple'}</td></tr>`).join('')+'</table>';
+}
+
+/* ---------- valuador ---------- */
+function bucketM2(m){ return DATA.m2_buckets.findIndex(b=>m>=b[0]&&m<b[1]); }
+function valuar(){
+  const mu=+$('vMuni').value, co=$('vCol').value, op=+$('vOp').value, ti=+$('vTipo').value, m2=+$('vM2').value, rc=+$('vRec').value, pub=+$('vPrecio').value;
+  const b=bucketM2(m2); const out=$('vOut');
+  if(!(m2>=25)){ out.innerHTML='Captura los m² de construcción (mínimo 25).'; return; }
+  const base=DATA.cubo.filter(r=>r[IDX.o]==op&&r[IDX.t]==ti);
+  const niveles=[
+    ['colonia, tamaño y recámaras', base.filter(r=>r[IDX.c]==co&&r[IDX.b]==b&&r[IDX.r]==rc),10,'Alta'],
+    ['colonia y tamaño', base.filter(r=>r[IDX.c]==co&&r[IDX.b]==b),10,'Media-alta'],
+    ['colonia', base.filter(r=>r[IDX.c]==co),10,'Media'],
+    ['municipio y tamaño', base.filter(r=>r[IDX.m]==mu&&r[IDX.b]==b),30,'Baja'],
+    ['municipio', base.filter(r=>r[IDX.m]==mu),30,'Muy baja']];
+  let sel=null; for(const nv of niveles){ if(sumN(nv[1])>=nv[2]){ sel=nv; break; } }
+  if(!sel){ out.innerHTML='<b>No hay anuncios suficientes</b> para estimar esta combinación. (Regla de cobertura: no se dan estimaciones donde no hay dato.)'; return; }
+  const ppm=wmed(sel[1],IDX.p), lo=wmed(sel[1],IDX.q1), hi=wmed(sel[1],IDX.q3), nn=sumN(sel[1]);
+  const est=ppm*m2, elo=lo*m2, ehi=hi*m2;
+  const e=DATA.est.find(x=>x[0]==co&&x[1]==ti&&x[2]==op);
+  let cmp='';
+  if(pub>0){ const d=(pub-est)/est*100; cmp=`<p>El precio publicado (${money(pub)}) está <b class="${Math.abs(d)<=10?'ok':(Math.abs(d)<=25?'warn':'bad')}">${Math.abs(d).toFixed(1)}% ${d>=0?'por arriba':'por abajo'}</b> del estimado.</p>`; }
+  out.innerHTML=`<div class="t">Precio aproximado de listado${op==1?' (renta mensual)':''}</div><div class="big">${money(est)}</div>
+   <div>Rango típico (p25–p75 de anuncios parecidos): ${money(elo)} – ${money(ehi)} · ${money(ppm)} por m²</div>${cmp}
+   <p class="sub">Basado en ${fmt.format(nn)} anuncios de ${sel[0]}. Confianza: <span class="pill">${sel[3]}</span>${e&&e[5]!=null?` · MAPE de la colonia en prueba: ${e[5].toFixed(1)}%`:''}. Orientación escolar, no avalúo.</p>`;
+}
+
+/* ---------- inicialización ---------- */
+function llenarMuni(sel, todos){ sel.innerHTML=(todos?'<option value="">Todo el AMM</option>':'')+MUNI.map((m,i)=>`<option value="${i}">${m}</option>`).join(''); }
+function llenarCol(sel, mu, todas){
+  const items=COL.map((c,i)=>[i,c]).filter(([i,c])=>mu===''||c[1]==mu).sort((a,b)=>a[1][0].localeCompare(b[1][0],'es'));
+  sel.innerHTML=(todas?'<option value="">Todas</option>':'')+items.map(([i,c])=>`<option value="${i}">${c[0]}</option>`).join('');
+}
+llenarMuni($('fMuni'),true); llenarCol($('fCol'),'',true);
+$('fM2').innerHTML='<option value="">Todos</option>'+DATA.m2_buckets.map((b,i)=>`<option value="${i}">${b[2]} m²</option>`).join('');
+llenarMuni($('vMuni'),false); llenarCol($('vCol'),0,false);
+$('fMuni').onchange=e=>{ state.m=e.target.value; state.c=''; llenarCol($('fCol'),state.m,true); render(); };
+$('fCol').onchange=e=>{ state.c=e.target.value; render(); };
+$('fOp').onchange=e=>{ state.o=+e.target.value; render(); };
+$('fTipo').onchange=e=>{ state.t=e.target.value; render(); };
+$('fM2').onchange=e=>{ state.b=e.target.value; render(); };
+$('fRec').onchange=e=>{ state.r=e.target.value; render(); };
+$('vMuni').onchange=e=>{ llenarCol($('vCol'),+e.target.value,false); valuar(); };
+['vCol','vOp','vTipo','vM2','vRec','vPrecio'].forEach(id=>$(id).addEventListener('input',valuar));
+$('foot').innerHTML=`Fuente: dataset simulado (${fmt.format(DATA.calidad.registros_crudos)} registros crudos de 4 portales, 3 corridas semanales). Pipeline: Python + Spark local → Data Lake (bronce/plata/oro) → warehouse estrella → este tablero. Generado el ${DATA.generado}. Las medianas por combinación de filtros son medianas ponderadas de las medianas de cada grupo (aproximación).`;
+render(); renderCalidad(); valuar();
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{render();});
+</script>
+</body>
+</html>

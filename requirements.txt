@@ -1,0 +1,11 @@
+pyspark>=3.5
+pandas>=2.0
+numpy>=1.26
+pyarrow>=14
+scikit-learn>=1.4
+matplotlib>=3.8
+# Opcionales
+playwright>=1.40      # solo para src/captura_dashboard.py
+pymongo>=4.6          # solo para src/opcional_mongodb.py
+sqlalchemy>=2.0       # solo para cargar a PostgreSQL
+psycopg2-binary>=2.9  # solo para cargar a PostgreSQL

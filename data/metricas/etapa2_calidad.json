@@ -1,0 +1,54 @@
+{
+  "registros_crudos": 1500763,
+  "registros_unicos": 1279468,
+  "duplicados_recaptura": 147996,
+  "duplicados_interportal": 73299,
+  "tasa_duplicados_pct": 14.75,
+  "pct_completo": 81.62,
+  "pct_m2_valido": 92.98,
+  "pct_colonia_valida": 88.67,
+  "pct_precio_valido": 99.0,
+  "pct_municipio_valido": 96.6,
+  "terrenos": 65243,
+  "anuncios_en_usd": 12751,
+  "por_fuente": [
+    {
+      "fuente": "inmuebles24",
+      "n": 509724,
+      "pct_completo": 82.77,
+      "pct_m2_valido": 92.99,
+      "pct_colonia_valida": 89.91,
+      "pct_precio_valido": 99.01,
+      "pct_duplicado": 12.19
+    },
+    {
+      "fuente": "lamudi",
+      "n": 374757,
+      "pct_completo": 82.81,
+      "pct_m2_valido": 93.03,
+      "pct_colonia_valida": 89.94,
+      "pct_precio_valido": 98.98,
+      "pct_duplicado": 14.27
+    },
+    {
+      "fuente": "mercadolibre",
+      "n": 308269,
+      "pct_completo": 82.89,
+      "pct_m2_valido": 92.94,
+      "pct_colonia_valida": 90.09,
+      "pct_precio_valido": 99.0,
+      "pct_duplicado": 16.43
+    },
+    {
+      "fuente": "vivanuncios",
+      "n": 308013,
+      "pct_completo": 76.99,
+      "pct_m2_valido": 92.95,
+      "pct_colonia_valida": 83.65,
+      "pct_precio_valido": 99.0,
+      "pct_duplicado": 17.87
+    }
+  ],
+  "segundos_etapa": 80.5,
+  "segundos_escritura_parquet": 45.3
+}

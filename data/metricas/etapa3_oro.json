@@ -1,0 +1,11 @@
+{
+  "filas_hecho": 1500763,
+  "filas_usables": 979876,
+  "outliers": 6188,
+  "sin_ubicacion": 51078,
+  "completos_unicos": 1030794,
+  "colonias_con_datos": 110,
+  "municipios_con_datos": 10,
+  "segundos_consulta_cubo_spark": 7.5,
+  "segundos_etapa": 36.6
+}

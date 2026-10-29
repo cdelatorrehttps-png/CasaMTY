@@ -1,0 +1,122 @@
+﻿id_ubicacion,municipio,colonia,zona
+1,SIN MUNICIPIO,SIN COLONIA,SIN ZONA
+2,Monterrey,SIN COLONIA,SIN ZONA
+3,Monterrey,Cumbres 1er Sector,Cumbres
+4,Monterrey,Cumbres 2do Sector,Cumbres
+5,Monterrey,Cumbres 3er Sector,Cumbres
+6,Monterrey,Cumbres 4to Sector,Cumbres
+7,Monterrey,Cumbres Élite,Cumbres
+8,Monterrey,Contry,Sur
+9,Monterrey,Tecnológico,Sur
+10,Monterrey,Mitras Centro,Centro
+11,Monterrey,Centro Monterrey,Centro
+12,Monterrey,Obispado,Poniente
+13,Monterrey,Independencia,Centro
+14,Monterrey,Valle Alto,Sur
+15,Monterrey,Vista Hermosa,Sur
+16,Monterrey,Colonial La Silla,Sur
+17,San Pedro Garza García,SIN COLONIA,SIN ZONA
+18,San Pedro Garza García,Del Valle,Valle
+19,San Pedro Garza García,Valle Oriente,Valle
+20,San Pedro Garza García,Residencial San Agustín,Valle
+21,San Pedro Garza García,Fuentes del Valle,Valle
+22,San Pedro Garza García,Santa Engracia,Valle
+23,San Pedro Garza García,Lomas del Valle,Valle
+24,San Pedro Garza García,Chipinque,Sierra
+25,San Pedro Garza García,Los Sabinos,Centro SP
+26,San Pedro Garza García,Palo Blanco,Centro SP
+27,San Pedro Garza García,Rincón de San Pedro,Centro SP
+28,San Pedro Garza García,Colonia Jardines de San Agustín,Valle
+29,San Pedro Garza García,Misión San Pedro,Centro SP
+30,Guadalupe,SIN COLONIA,SIN ZONA
+31,Guadalupe,Linda Vista,Oriente
+32,Guadalupe,Contry Sol,Oriente
+33,Guadalupe,Guadalupe Centro,Centro
+34,Guadalupe,Zertuche,Oriente
+35,Guadalupe,Lomas de Guadalupe,Oriente
+36,Guadalupe,Francisco Villa,Oriente
+37,Guadalupe,Bosques del Valle,Oriente
+38,Guadalupe,Jardines de Guadalupe,Oriente
+39,Guadalupe,Mitras Oriente,Oriente
+40,Guadalupe,Arboledas de Guadalupe,Oriente
+41,Guadalupe,Valle del Mirador,Oriente
+42,Guadalupe,Plaza Chapultepec,Oriente
+43,San Nicolás de los Garza,SIN COLONIA,SIN ZONA
+44,San Nicolás de los Garza,Anáhuac,Norte
+45,San Nicolás de los Garza,Las Puentes,Norte
+46,San Nicolás de los Garza,Hacienda Los Morales,Norte
+47,San Nicolás de los Garza,Santo Domingo,Norte
+48,San Nicolás de los Garza,Fomerrey 106,Norte
+49,San Nicolás de los Garza,Cuauhtémoc,Centro
+50,San Nicolás de los Garza,Del Maestro,Norte
+51,San Nicolás de los Garza,Residencial Universidad,Norte
+52,San Nicolás de los Garza,Villas de San Nicolás,Norte
+53,San Nicolás de los Garza,Valle de Anáhuac,Norte
+54,San Nicolás de los Garza,Colonia Los Lermas,Norte
+55,San Nicolás de los Garza,San Nicolás Centro,Centro
+56,Apodaca,SIN COLONIA,SIN ZONA
+57,Apodaca,Apodaca Centro,Centro
+58,Apodaca,Huinalá,Oriente
+59,Apodaca,Nexxus,Poniente
+60,Apodaca,Hacienda Los Encinos,Poniente
+61,Apodaca,Puerta del Norte,Norte
+62,Apodaca,Vía Montaña,Poniente
+63,Apodaca,Villas de la Hacienda,Poniente
+64,Apodaca,Privadas de Apodaca,Centro
+65,Apodaca,Valle de las Palmas,Poniente
+66,Apodaca,Rincón de las Américas,Oriente
+67,Apodaca,Colonia Santa Rosa,Centro
+68,Apodaca,Paseo de Apodaca,Poniente
+69,General Escobedo,SIN COLONIA,SIN ZONA
+70,General Escobedo,Escobedo Centro,Centro
+71,General Escobedo,Valle Soleado,Poniente
+72,General Escobedo,Hacienda del Topo,Poniente
+73,General Escobedo,Villas de San Francisco,Norte
+74,General Escobedo,Sendero,Poniente
+75,General Escobedo,Montesori,Norte
+76,General Escobedo,Los Sauces,Norte
+77,General Escobedo,Real de Palmas,Poniente
+78,General Escobedo,Paseo de los Naranjos,Poniente
+79,General Escobedo,Portal de Escobedo,Norte
+80,General Escobedo,Colonia Nogales,Norte
+81,General Escobedo,Misión de Escobedo,Poniente
+82,Santa Catarina,SIN COLONIA,SIN ZONA
+83,Santa Catarina,Santa Catarina Centro,Centro
+84,Santa Catarina,Las Misiones,Poniente
+85,Santa Catarina,Fuentes de Santa Catarina,Poniente
+86,Santa Catarina,Paseo del Prado,Poniente
+87,Santa Catarina,Valle de Santa Catarina,Poniente
+88,Santa Catarina,Bosques de la Huasteca,Poniente
+89,Santa Catarina,Colonia La Fama,Centro
+90,Santa Catarina,Residencial Santa Catarina,Poniente
+91,Santa Catarina,Cerradas del Poniente,Poniente
+92,Santa Catarina,Los Cristales,Centro
+93,García,SIN COLONIA,SIN ZONA
+94,García,García Centro,Centro
+95,García,Valle de Lincoln,Norte
+96,García,Vistas del Río,Norte
+97,García,Paseo de las Villas,Norte
+98,García,Hacienda Mitras,Norte
+99,García,Real de Cumbres García,Norte
+100,García,Colinas de García,Norte
+101,García,Villa Mitras,Centro
+102,García,Misión del Valle,Norte
+103,García,Lomas de García,Centro
+104,Juárez,SIN COLONIA,SIN ZONA
+105,Juárez,Juárez Centro,Centro
+106,Juárez,Paseo de los Naranjos Juárez,Sur
+107,Juárez,Valle de Juárez,Sur
+108,Juárez,Santa Rosa Juárez,Sur
+109,Juárez,Colinas del Sur,Sur
+110,Juárez,Hacienda San Pedro,Sur
+111,Juárez,Residencial Huinalá Sur,Sur
+112,Juárez,Villas del Sur,Sur
+113,Juárez,Puerta de Hierro Juárez,Sur
+114,Juárez,Colonia Benito Juárez,Centro
+115,Santiago,SIN COLONIA,SIN ZONA
+116,Santiago,Santiago Centro,Centro
+117,Santiago,El Cercado,Sur
+118,Santiago,Cola de Caballo,Sierra
+119,Santiago,Residencial Los Álamos,Centro
+120,Santiago,Valle de Santiago,Sur
+121,Santiago,Lomas de Santiago,Sierra

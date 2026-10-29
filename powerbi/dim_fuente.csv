@@ -1,0 +1,5 @@
+﻿id_fuente,fuente,tipo_extraccion,fecha_ultima_corrida
+1,inmuebles24,simulado (JSONL batch),2026-10-19
+2,lamudi,simulado (JSONL batch),2026-10-19
+3,vivanuncios,simulado (JSONL batch),2026-10-19
+4,mercadolibre,simulado (JSONL batch),2026-10-19
